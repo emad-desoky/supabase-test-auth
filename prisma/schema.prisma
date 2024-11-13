@@ -15,15 +15,19 @@ datasource db {
 }
 
 model User {
-  id   String     @id
-  age  Int
-  food FoodList[]
+  id          String     @id @default(cuid()) // Supabase user ID
+  displayName String
+  phone       String
+  age         Int
+  food        FoodList[]
 }
 
 model FoodList {
-  id      Int    @id @default(autoincrement())
-  title   String
-  content String
-  userId  String
-  user    User   @relation(fields: [userId], references: [id])
+  id       Int    @id @default(autoincrement())
+  title    String
+  content  String
+  imageUrl String // Image URL field
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
 }

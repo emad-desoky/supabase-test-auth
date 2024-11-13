@@ -57,7 +57,17 @@ export default function SignUpPage() {
           required
           className="w-full p-2 border border-gray-300 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-
+        {/* Age */}
+        <label htmlFor="age" className="block text-gray-700 font-medium mb-2">
+          Age:
+        </label>
+        <input
+          id="age"
+          name="age"
+          type="number"
+          required
+          className="w-full p-2 border border-gray-300 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
         <button
           formAction={signup}
           type="submit"
