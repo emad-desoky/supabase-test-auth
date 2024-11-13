@@ -1,10 +1,7 @@
-"use client";
+import Link from "next/link";
 import { login } from "./actions";
-import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const router = useRouter();
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <form className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -44,13 +41,12 @@ export default function LoginPage() {
           >
             Log in
           </button>
-          <button
-            type="button"
-            onClick={() => router.push("/sign-up")}
+          <Link
+            href={"/sign-up"}
             className="bg-green-500 text-black font-medium py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           >
             Sign up
-          </button>
+          </Link>
         </div>
       </form>
     </div>
